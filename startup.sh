@@ -2,10 +2,10 @@
 set -e
 
 # Create necessary directories for data storage
-mkdir -p /var/data/_cache/characters
-mkdir -p /var/data/_storage
-mkdir -p /var/data/_uploads
-mkdir -p /var/data/_webpack
+mkdir -p ./data/_cache/characters
+mkdir -p ./data/_storage
+mkdir -p ./data/_uploads
+mkdir -p ./data/_webpack
 
 # Start the application
 npm start
