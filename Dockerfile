@@ -23,7 +23,11 @@ RUN \
 RUN \
   rm -f "config.yaml" || true && \
   ln -s "./config/config.yaml" "config.yaml" || true && \
-  mkdir "config" || true
+  mkdir "config" || true && \
+  mkdir -p "/var/data/_cache/characters" && \
+  mkdir -p "/var/data/_storage" && \
+  mkdir -p "/var/data/_uploads" && \
+  mkdir -p "/var/data/_webpack"
 
 # Pre-compile public libraries
 RUN \
