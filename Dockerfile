@@ -41,6 +41,7 @@ RUN \
   rm -rf "./docker" && \
   echo "*** Make docker-entrypoint.sh executable ***" && \
   chmod +x "./docker-entrypoint.sh" && \
+  chmod +x "./startup.sh" && \
   echo "*** Convert line endings to Unix format ***" && \
   dos2unix "./docker-entrypoint.sh"
 
@@ -50,4 +51,4 @@ RUN git config --global --add safe.directory "*"
 EXPOSE 8000
 
 # Ensure proper handling of kernel signals
-ENTRYPOINT ["tini", "--", "./docker-entrypoint.sh"]
+ENTRYPOINT ["tini", "--", "./startup.sh"]
