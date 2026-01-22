@@ -1,8 +1,7 @@
 A render.yaml file was found, but there was an issue.services:
   - type: web
     name: koitavern
-    env: node
-    region: oregon
+    runtime: node
     plan: starter
     buildCommand: npm install
     startCommand: npm start
@@ -10,10 +9,10 @@ A render.yaml file was found, but there was an issue.services:
       - key: NODE_ENV
         value: production
       - key: PORT
-        value: 10000
+        value: "10000"
       - key: DATA_ROOT
         value: /var/data
     disk:
-      name: data
-      mountPath: /var/data
+      id: data
       sizeGb: 1
+      mountPath: /var/data
